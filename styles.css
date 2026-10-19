@@ -1,0 +1,295 @@
+:root {
+  --bg: #f4f7fb;
+  --ink: #1b2838;
+  --muted: #5c6d80;
+  --line: #dce3ec;
+  --card: #ffffff;
+  --accent: #e24b32;
+  --max: 1080px;
+  --serif: "Fraunces", "Iowan Old Style", Palatino, Georgia, serif;
+  --sans: "Outfit", "Avenir Next", "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+.wrap {
+  width: min(var(--max), calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 0;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  font-size: 1.05rem;
+}
+
+.site-header nav {
+  display: flex;
+  gap: 22px;
+}
+
+.site-header nav a {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.site-header nav a[aria-current="page"],
+.site-header nav a:hover {
+  color: var(--ink);
+}
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  max-width: 40rem;
+  padding: 72px 0 96px;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background-image: radial-gradient(circle, rgba(27, 40, 56, 0.28) 1.4px, transparent 1.55px);
+  background-size: 26px 26px;
+  background-position: center;
+  mask-image: linear-gradient(to bottom, transparent, #000 12%, #000 80%, transparent);
+  pointer-events: none;
+}
+
+.kicker {
+  margin: 0 0 12px;
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 560;
+  font-size: clamp(3.2rem, 7vw, 5.6rem);
+  letter-spacing: -0.045em;
+  line-height: 0.92;
+}
+
+.lede {
+  max-width: 38rem;
+  margin: 22px 0 0;
+  color: var(--muted);
+  font-size: 1.15rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.button.primary {
+  background: var(--ink);
+  color: #fff;
+}
+
+.button.ghost {
+  background: transparent;
+  color: var(--ink);
+  box-shadow: inset 0 0 0 1.5px var(--line);
+}
+
+.stores {
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.section {
+  padding: 12px 0 72px;
+}
+
+.section h2 {
+  margin: 0 0 8px;
+  font-family: var(--serif);
+  font-weight: 560;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.section-intro {
+  margin: 0 0 28px;
+  max-width: 36rem;
+  color: var(--muted);
+}
+
+.steps,
+.features {
+  display: grid;
+  gap: 14px;
+}
+
+.steps {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.features {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+  background: var(--card);
+  border-radius: 20px;
+  padding: 22px 22px 20px;
+  box-shadow: 0 1px 0 rgba(27, 40, 56, 0.04);
+}
+
+.step-num {
+  display: block;
+  margin-bottom: 18px;
+  color: var(--accent);
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  letter-spacing: -0.04em;
+}
+
+.card h3 {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+}
+
+.card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--line);
+  padding: 28px 0 40px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.site-footer a {
+  color: var(--ink);
+}
+
+.legal {
+  padding-bottom: 80px;
+}
+
+.legal h1 {
+  font-size: clamp(2.6rem, 6vw, 4.2rem);
+  margin-bottom: 10px;
+}
+
+.updated {
+  color: var(--muted);
+  margin: 0 0 28px;
+}
+
+.prose {
+  max-width: 42rem;
+}
+
+.prose h2 {
+  margin: 32px 0 8px;
+  font-size: 1.2rem;
+  letter-spacing: -0.02em;
+}
+
+.prose p,
+.prose li {
+  color: #314254;
+}
+
+.prose ul {
+  margin: 8px 0 0;
+  padding-left: 1.2rem;
+}
+
+.prose a {
+  color: var(--accent);
+}
+
+@media (max-width: 860px) {
+  .steps,
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 36px 0 72px;
+  }
+}
+
+@media (max-width: 640px) {
+  .wrap {
+    width: min(var(--max), calc(100% - 28px));
+  }
+
+  .site-header nav {
+    gap: 14px;
+  }
+}
